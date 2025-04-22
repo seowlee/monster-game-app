@@ -30,8 +30,20 @@ public class Monster {
 	}
 
 	// 공통 getter
+	public int getId() {
+		return id;
+	}
+
 	public String getName() {
 		return name;
+	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public int getTier() {
+		return tier;
 	}
 
 	public int getCurrentEnergy() {
