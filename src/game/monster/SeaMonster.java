@@ -2,8 +2,9 @@ package game.monster;
 
 public class SeaMonster extends Monster {
 
-	public SeaMonster(String name, int tier, int maxEnergy) {
-		super(name, tier, HabitatType.SEA);
+	public SeaMonster(int id, String name, int tier, int maxEnergy) {
+		super(id, name, tier);
+		this.habitat = "sea";
 	}
 
 	public double getEscapeRate() {

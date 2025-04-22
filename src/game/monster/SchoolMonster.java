@@ -2,8 +2,9 @@ package game.monster;
 
 public class SchoolMonster extends Monster {
 
-	public SchoolMonster(String name, int tier, int maxEnergy) {
-		super(name, tier, HabitatType.SCHOOL);
+	public SchoolMonster(int id, String name, int tier, int maxEnergy) {
+		super(id, name, tier);
+		this.habitat = "school";
 	}
 
 	public double getEscapeRate() {

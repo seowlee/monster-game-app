@@ -7,4 +7,5 @@ public class MonsterApp {
 		GameController game = new GameController();
 		game.run();
 	}
+
 }
