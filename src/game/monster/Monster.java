@@ -29,10 +29,6 @@ public class Monster {
 		hp = Math.min(maxEnergy, hp + amount);
 	}
 
-	public boolean isCapturable() {
-		return hp <= 10;
-	}
-
 	// 공통 getter
 	public String getName() {
 		return name;
@@ -44,6 +40,10 @@ public class Monster {
 
 	public int getMaxEnergy() {
 		return maxEnergy;
+	}
+
+	public boolean isCaptured() {
+		return isCaptured;
 	}
 
 	public String getHabitat() {

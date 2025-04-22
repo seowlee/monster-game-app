@@ -4,7 +4,8 @@ import game.monster.Monster;
 
 public class MovePlayer {
     public String movePlayer(Monster monster) {
-        if (monster.isCaptured) return monster.name + "은 이미 잡은 몬스터입니다.";
+        if (monster.isCaptured())
+            return monster.getName() + "은 이미 잡은 몬스터입니다.";
         return "";
     }
 }

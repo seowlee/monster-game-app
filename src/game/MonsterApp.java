@@ -7,5 +7,4 @@ public class MonsterApp {
 		GameController game = new GameController();
 		game.run();
 	}
->>>>>>>>> Temporary merge branch 2
 }
