@@ -2,11 +2,28 @@ package game.player;
 
 import game.monster.Monster;
 
+import java.util.Random;
+
 public class AttackMonster {
-    public String attackMonster(Monster monster) {
-        if (monster.getHp() <= 10)
-            return "몬스터를 성공적으로 잡았습니다.";
-        else
-            return "몬스터를 잡지 못했습니다.";
+    Random r = new Random();
+
+    // 몬스터를 잡았을 때 처리하는 메서드
+    private void captureMonster(Monster monster) {
+        monster.setIsCaptured(true);
+        System.out.println(monster.getName() + "를 성공적으로 잡았습니다.");
+    }
+
+    public void attackMonster(Monster monster) {
+        int hp = monster.getHp();
+        // 몬스터 체력이 20 이하면 무조건 잡을 수 있음
+        if (hp <= 20) {
+            captureMonster(monster);
+        }
+        // 몬스터 체력이 40 이하면 50% 확률로 잡을 수 있음
+        else if (hp <= 40 && r.nextInt(2) == 0) {
+            captureMonster(monster);
+        } else {
+            System.out.println(monster.getName() + "를 잡지 못했습니다.");
+        }
     };
 }

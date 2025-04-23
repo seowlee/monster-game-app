@@ -6,6 +6,7 @@ import game.habitat.HabitatService;
 import game.monster.Monster;
 import game.monster.MonsterData;
 import game.utils.Converter;
+import game.player.Player;
 
 /*
  * 전체 게임 관리 클래스
@@ -52,7 +53,8 @@ public class GameController {
 	private void startGame() {
 		this.allMonsters = MonsterData.getInitialMonsters();
 		this.isGameStarted = true;
-		System.out.println("\n## 게임 시작!");
+
+        System.out.println("\n## 게임 시작!");
 		System.out.println("🔥 몬스터 초기화 완료 (" + allMonsters.length + " 마리 등장)");
 		System.out.println("📍 어디로 가겠습니까? 1.산  2.바다  3.학교 (종료는 exit)");
 	}

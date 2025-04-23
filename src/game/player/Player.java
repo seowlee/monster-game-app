@@ -1,17 +1,14 @@
 package game.player;
 
 import game.monster.Monster;
-import java.util.*;
 
 public class Player {
-	private String name;
+	private final String name = "모험자";
 	private int hp;
-	private int conHP = 10;
 
-	Random r = new Random();
-	ViewMonsterDex vmd = new ViewMonsterDex();
+    ViewMonsterDex vmd = new ViewMonsterDex();
 	AttackMonster am = new AttackMonster();
-	MovePlayer mm = new MovePlayer();
+    HitMonster hm = new HitMonster();
 	printHP ph = new printHP();
 
 	// 도감 목록 보기- 잡은 몬스터 목록, 잡아야할 몬스터 목록 모두 포함
@@ -22,27 +19,27 @@ public class Player {
 
 	// 몬스터 잡기 - 잡혔는지 안잡혔는지 결과에 따라 처리하기
 	public void attackMonster(Monster monster) {
-		System.out.println(am.attackMonster(monster));
+        if (this.hp <= 0) return;
+		am.attackMonster(monster);
+        consumeHP();
 	};
 
-	// 몬스터 때리기 - 플레이어, 포켓몬 에너지 깎임
+	// 몬스터 공격하기 - 플레이어, 포켓몬 에너지 깎임
 	public void hitMonster(Monster monster) {
-
-	}
-
-	// 도망가기 - 이미 잡은 몬스터(이름으로 체크)
-	public void movePlayer(Monster monster) {
-		System.out.println(mm.movePlayer(monster));
+        if (this.hp <= 0) return;
+        consumeHP();
+        monster.setHp(monster.getHp() - hm.attack());
 	}
 
 	// 휴식 - 에너지 복구
 	public void rest() {
-		this.hp = 100;
+		if (this.hp <= 0) this.hp = 100;
 	};
 
-	// 체력 감소 - 행동할 때 마다 플레이어 체력이 깍임
+	// 체력 감소 - 행동할 때 마다 플레이어 체력이 깍임(10 감소)
 	private void consumeHP() {
-		this.hp -= this.conHP;
+        final int conHP = 10;
+        this.hp -= conHP;
 		ph.PrintHP(hp, conHP, name);
 	}
 }
