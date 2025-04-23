@@ -65,4 +65,13 @@ public class Monster {
 	public String getHabitat() {
 		return habitat;
 	}
+
+    // 공통 setter
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public void setIsCaptured(boolean isCaptured) {
+        this.isCaptured = isCaptured;
+    }
 }

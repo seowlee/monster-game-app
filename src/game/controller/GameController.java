@@ -7,9 +7,7 @@ import game.habitat.HabitatService;
 import game.player.Player;
 import game.utils.Converter;
 
-/*
- * 전체 게임 관리 클래스
- */
+// 전체 게임 관리 컨트롤러
 public class GameController {
 	Scanner scanner = new Scanner(System.in);
 	GameContext gameContext;
