@@ -14,8 +14,4 @@ public class HitMonster {
             default -> 0;
         };
     }
-
-    public int remainHp(Monster m) {
-        return attack();
-    }
 }
