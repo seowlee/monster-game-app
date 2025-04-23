@@ -6,7 +6,7 @@ public class Monster {
 	private int id;
 	private String name;
 	private int hp; // 에너지. 체력
-	private int tier;
+	private int tier; // 아직사용x
 	private int maxEnergy;
 	private boolean isCaptured; // 잡힘 상태. 잡혔으면 true 아니면 false
 	protected String habitat;
@@ -23,8 +23,8 @@ public class Monster {
 		this.attackDamage = 10;
 	}
 
-	public void takeDamage(int damage) {
-		System.out.println("😵 몬스터 " + this.name + "이(가) " + damage + " 만큼의 데미지를 입었습니다.");
+	public void takeDamage() {
+		System.out.println("😵 몬스터 " + this.name + "이(가) " + this.attackDamage + " 만큼의 데미지를 입었습니다.");
 	}
 
 	public void reduceHp(int amount) {
