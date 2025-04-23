@@ -14,10 +14,13 @@ public class HabitatService {
 			System.out.println("⚠️ 이 지역에서 더 이상 잡을 수 있는 몬스터가 없습니다.");
 			return;
 		}
+		MonsterManager.showMonstersByRegion(uncapturedMonstersByRegion);
 
 		System.out.println("💡 행동을 선택하세요: 1.잡기  2.공격하기  3.휴식 0.지역 선택으로 돌아가기");
 		String action = scanner.nextLine().trim();
-		Monster target = MonsterManager.getRandomMonster(uncapturedMonstersByRegion);
+		Monster target = gameContext.getMonsterManager().getRandomMonster(uncapturedMonstersByRegion);
+
+		target.printMonster();
 
 		// TODO: player hp < 0 처리 그냥 넘기기
 		switch (action) {

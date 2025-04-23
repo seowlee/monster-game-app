@@ -57,9 +57,7 @@ public class GameController {
 	}
 
 	private void startGame() {
-		// Monster[] allMonsters = MonsterData.getInitialMonsters();
-		Player player = new Player();
-		this.gameContext = new GameContext(player);
+		this.gameContext = new GameContext();
 		this.isGameStarted = true;
 		this.printStartGuide();
 	}
