@@ -12,10 +12,14 @@ public class MountainMonster extends Monster {
 	}
 
 	@Override
-	public void attackPlayer(Player player) {
-		System.out.println(this.habitat + " 몬스터 " + this.getName() + "의 " + this.attackName + "공격");
-		player.reduceHP(this.attackDamage);
+	public void takeDamage(int damage) {
+		 // super.reduceHp(damage); 와 같음. 자식에서 오버라이드 하지 않음
+		reduceHp(damage);
+	
+		System.out.println("😵 몬스터 " + this.getName() + "이(가) " + this.attackName + "공격으로 " + damage + " 데미지를 입었습니다.");
+		System.out.println("🩸 남은 체력: " + this.getHp());
 	}
+	
 
 	public double getEscapeRate() {
 		return 0.3;

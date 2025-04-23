@@ -1,6 +1,7 @@
 package game.monster;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class MonsterManager {
 	private Monster[] allMonsters;
@@ -22,9 +23,12 @@ public class MonsterManager {
 		return resultList;
 	}
 
-	public static Monster getRandomMonster(Monster[] uncapturedMonstersByRegion) {
-		// TODO Auto-generated method stub
-		return uncapturedMonstersByRegion[0];
+	public static Monster getRandomMonster(Monster[] monsters) {
+		if (monsters == null || monsters.length == 0) {
+			throw new IllegalArgumentException("선택 가능한 몬스터가 없습니다.");
+		}
+		Random r = new Random();
+		int index = r.nextInt(monsters.length); // 0 ~ monsters.length - 1
+		return monsters[index];
 	}
-
 }

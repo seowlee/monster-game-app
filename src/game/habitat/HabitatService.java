@@ -15,10 +15,11 @@ public class HabitatService {
 			return;
 		}
 
-		System.out.println("💡 행동을 선택하세요: 1.잡기  2.때리기  3.휴식  0.지역 선택으로 돌아가기");
+		System.out.println("💡 행동을 선택하세요: 1.잡기  2.공격하기  3.휴식 0.지역 선택으로 돌아가기");
 		String action = scanner.nextLine().trim();
 		Monster target = MonsterManager.getRandomMonster(uncapturedMonstersByRegion);
 
+		// TODO: player hp < 0 처리 그냥 넘기기
 		switch (action) {
 			case "1":
 				gameContext.getPlayer().attackMonster(target);
@@ -34,12 +35,9 @@ public class HabitatService {
 			default:
 				System.out.println("⚠️ 올바른 입력이 아닙니다.");
 		}
-
-		// 이미 잡혔다면 종료
 		if (target.isCaptured()) {
 			System.out.println("🎉 몬스터를 잡았습니다! 지역 탐험을 종료합니다.");
 		}
-
 	}
 
 	private static void exploreMountain(String region, GameContext gameContext) {

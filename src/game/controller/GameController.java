@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 import game.context.GameContext;
 import game.habitat.HabitatService;
-import game.monster.Monster;
-import game.monster.MonsterData;
-import game.monster.MonsterManager;
 import game.player.Player;
 import game.utils.Converter;
 
@@ -40,7 +37,8 @@ public class GameController {
 			}
 			// 도감 보기
 			if (inputString.equalsIgnoreCase("dex")) {
-				this.gameContext.getPlayer().viewMonsterDex(this.gameContext.getMonsterManager().getAllMonsters());
+				this.gameContext.getPlayer()
+						.viewMonsterDex(this.gameContext.getMonsterManager().getAllMonsters());
 				continue;
 			}
 			// 몬스터 잡기
@@ -50,7 +48,7 @@ public class GameController {
 				String region = Converter.convertInputToRegion(regionName);
 
 				if (region == null) {
-					System.out.println("⚠️ 잘못된 탐험지 입니다. (go 산 / 바다 / 학교)");
+					System.out.println("⚠️ 잘못된 탐험지 입니다. (go 1 / go 2 / go 3)");
 					continue;
 				}
 				System.out.println("🧭 선택된 장소: " + region);
@@ -78,13 +76,14 @@ public class GameController {
 
 	private void printStartGuide() {
 		System.out.println("\n## 게임 시작!");
-		System.out.println("🔥 몬스터 초기화 완료 (" + gameContext.getMonsterManager().getAllMonsters().length + " 마리 등장)");
+		System.out.println("🔥 몬스터 초기화 완료 ("
+				+ gameContext.getMonsterManager().getAllMonsters().length + " 마리 등장)");
 		System.out.println("📌 명령어 예시:");
-		System.out.println("  dex           → 몬스터 도감 보기");
-		System.out.println("  go 산         → 산으로 탐험 가기");
-		System.out.println("  go 바다       → 바다로 탐험 가기");
-		System.out.println("  go 학교       → 학교로 탐험 가기");
-		System.out.println("  exit          → 게임 종료");
+		System.out.println("  dex        → 몬스터 도감 보기");
+		System.out.println("  go 1       → 산으로 탐험 가기");
+		System.out.println("  go 2       → 바다로 탐험 가기");
+		System.out.println("  go 3       → 학교로 탐험 가기");
+		System.out.println("  exit       → 게임 종료");
 	}
 
 	private void printExitMessage() {

@@ -23,18 +23,18 @@ public class Monster {
 		this.attackDamage = 10;
 	}
 
-	public void attackPlayer(Player player) {
-		// 플레이어에게 공격
-		System.out.println(this.habitat + " 몬스터 " + this.name + "의 공격");
-		player.reduceHP(this.attackDamage); // 플레이어 체력 감소
+	public void takeDamage(int damage) {
+		System.out.println("😵 몬스터 " + this.name + "이(가) " + damage + " 만큼의 데미지를 입었습니다.");
 	}
 
-	public void reduceEnergy(int amount) {
-		hp = Math.max(0, hp - amount);
+	public void reduceHp(int amount) {
+		this.hp -= amount;
+		if (this.hp < 0)
+			this.hp = 0;
 	}
 
-	public void recoverEnergy(int amount) {
-		hp = Math.min(maxEnergy, hp + amount);
+	public void markAsCaptured() {
+		this.isCaptured = true;
 	}
 
 	// 공통 getter
@@ -52,10 +52,6 @@ public class Monster {
 
 	public int getTier() {
 		return tier;
-	}
-
-	public int getCurrentEnergy() {
-		return hp;
 	}
 
 	public int getMaxEnergy() {

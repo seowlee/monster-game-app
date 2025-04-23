@@ -27,12 +27,14 @@ public class Player {
 
 	// 몬스터 때리기 - 플레이어, 포켓몬 에너지 깎임
 	public void hitMonster(Monster monster) {
-
-	}
+// TODO: player 만 공격. 몬스터 hp 만 깎임 <- 이 메서드 호출. 태희
+}
+	
 
 	// TODO: 논의. 도망가기에 왜 이미 잡은 몬스터 출력?
 	// 도망가기 - 이미 잡은 몬스터(이름으로 체크)
 	public void movePlayer(Monster monster) {
+// TODO: monster.attackPlayer(this); // 몬스터가 플레이어를 공격하는 메소드
 		System.out.println(mm.movePlayer(monster));
 	}
 

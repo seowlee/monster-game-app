@@ -9,17 +9,7 @@ public class SeaMonster extends Monster {
 		this.attackDamage = 15;
 	}
 
-	// TODO: attackPlayer 메소드 오버라이드
+	// TODO: takeDamage 메소드 오버라이드
 
-	public double getEscapeRate() {
-		return 0.6;
-	}
 
-	public double getCaptureRate() {
-		return 0.4;
-	}
-
-	public String getSpecialAbility() {
-		return "WaterBlast";
-	}
 }

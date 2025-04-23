@@ -10,11 +10,11 @@ public class Converter {
 	 */
 	public static String convertInputToRegion(String input) {
 		switch (input) {
-			case "산":
+			case "1":
 				return "mountain";
-			case "바다":
+			case "2":
 				return "sea";
-			case "학교":
+			case "3":
 				return "school";
 			default:
 				return null;

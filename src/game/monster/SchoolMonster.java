@@ -9,17 +9,7 @@ public class SchoolMonster extends Monster {
 		this.attackDamage = 50;
 	}
 
-	// TODO: attackPlayer 메소드 오버라이드
+	// TODO: takeDamage 메소드 오버라이드
 
-	public double getEscapeRate() {
-		return 0.2;
-	}
 
-	public double getCaptureRate() {
-		return 0.8;
-	}
-
-	public String getSpecialAbility() {
-		return "CheatSheet";
-	}
 }
