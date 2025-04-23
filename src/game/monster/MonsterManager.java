@@ -15,6 +15,7 @@ public class MonsterManager {
 	}
 
 	public Monster[] getUncapturedMonstersByRegion(String region) {
+		// TODO: 태희 if 로 바꿔.
 		Monster[] resultList = Arrays.stream(this.allMonsters)
 				.filter(m -> !m.isCaptured() && m.getHabitat().equals(region)).toArray(Monster[]::new);
 		for (Monster monster : resultList) {
@@ -22,6 +23,7 @@ public class MonsterManager {
 		}
 		return resultList;
 	}
+	// 몬스터 목록 출력. 그 목록을 출력하는 메서드
 
 	public static Monster getRandomMonster(Monster[] monsters) {
 		if (monsters == null || monsters.length == 0) {

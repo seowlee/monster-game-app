@@ -21,15 +21,4 @@ public class MountainMonster extends Monster {
 		System.out.println("🩸 남은 체력: " + this.getHp());
 	}
 
-	public double getEscapeRate() {
-		return 0.3;
-	}
-
-	public double getCaptureRate() {
-		return 0.5;
-	}
-
-	public String getSpecialAbility() {
-		return "RockSkin";
-	}
 }
