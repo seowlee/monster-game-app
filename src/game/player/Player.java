@@ -1,8 +1,13 @@
 package game.player;
 
+import game.monster.Monster;
+
 public class Player {
 	private String name;
-	private int energy;
+	private int hp;
+	private int turnCnt = 3;
+	
+	playerAttack pa = new playerAttack();
 
 	/**
 	 * 도감 목록 보기- 잡은 몬스터 목록, 잡아야할 몬스터 목록 모두 포함
@@ -18,7 +23,8 @@ public class Player {
 	 * 몬스터 잡기 - 잡혔는지 안잡혔는지 결과에 따라 처리하기
 	 * 
 	 */
-	public void attackMonster() {
+	public void attackMonster(Monster m) {
+		pa.remainHp(m);
 	};
 
 	/**
@@ -33,7 +39,7 @@ public class Player {
 	 * 휴식 - 에너지 복구
 	 */
 	public void rest() {
-		this.energy = 100;
+		this.hp = 100;
 	};
 
 }
