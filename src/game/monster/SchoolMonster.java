@@ -6,7 +6,7 @@ public class SchoolMonster extends Monster {
 		super(id, name, tier, maxEnergy);
 		this.habitat = "school";
 		this.attackName = "지식의 파도";
-		this.hpLoss = 50;
+		this.hpLoss = 99;
 	}
 
 	// TODO: takeDamage 메소드 오버라이드
