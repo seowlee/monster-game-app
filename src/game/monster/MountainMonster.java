@@ -1,7 +1,5 @@
 package game.monster;
 
-import game.player.Player;
-
 public class MountainMonster extends Monster { // 자식클래스(몬스터의 종류별 특징 구현) - 1산몬스터
 
 	public MountainMonster(int id, String name, int tier, int maxEnergy) {

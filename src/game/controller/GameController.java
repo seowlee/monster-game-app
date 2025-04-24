@@ -47,6 +47,8 @@ public class GameController {
 					this.printInGameHelp();
 				}
 
+			} else if (inputString.equalsIgnoreCase("zz")) {
+				gameContext.getPlayer().rest();
 			} else {
 				System.out.println("⚠️ 존재하지 않는 명령어입니다. 사용 가능한 명령어:");
 				this.printInGameHelp();
@@ -59,13 +61,13 @@ public class GameController {
 		this.gameContext = new GameContext();
 		this.isGameStarted = true;
 		this.printStartGuide();
-        this.enterName();
+		this.enterName();
 	}
 
-    private void enterName() {
-        String inputName = scanner.nextLine().trim();
-        gameContext.getPlayer().enterName(inputName);
-    }
+	private void enterName() {
+		String inputName = scanner.nextLine().trim();
+		gameContext.getPlayer().enterName(inputName);
+	}
 
 	private void printWelcomeMessage() {
 		System.out.println("--------------------------------");
@@ -79,7 +81,7 @@ public class GameController {
 		System.out.println("\n## 게임 시작!");
 		System.out.println("🔥 몬스터 초기화 완료 ("
 				+ gameContext.getMonsterManager().getAllMonsters().length + " 마리 등장)");
-        System.out.println("😁 당신의 이름은 무엇입니까?");
+		System.out.println("😁 당신의 이름은 무엇입니까?");
 
 	}
 
@@ -89,6 +91,7 @@ public class GameController {
 		System.out.println("  go 1       → 산으로 탐험 가기");
 		System.out.println("  go 2       → 바다로 탐험 가기");
 		System.out.println("  go 3       → 학교로 탐험 가기");
+		System.out.println("  zz         → 체력 회복하기");
 		System.out.println("  exit       → 게임 종료\n");
 	}
 

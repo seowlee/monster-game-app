@@ -16,7 +16,7 @@ public class HabitatService {
 		}
 		gameContext.getMonsterManager().showMonstersByRegion(uncapturedMonstersByRegion);
 
-		System.out.println("💡 행동을 선택하세요: 1.잡기  2.공격하기  3.휴식 0.지역 선택으로 돌아가기");
+		System.out.println("💡 행동을 선택하세요: 1.잡기  2.공격하기 0.지역 선택으로 돌아가기");
 		String action = scanner.nextLine().trim();
 		Monster target = gameContext.getMonsterManager().getRandomMonster(uncapturedMonstersByRegion);
 
@@ -30,9 +30,6 @@ public class HabitatService {
 				target.printMonster();
 				gameContext.getPlayer().hitMonster(target);
 				break;
-			case "3":
-				gameContext.getPlayer().rest();
-				break;
 			case "0":
 				return;
 			default:
@@ -45,13 +42,13 @@ public class HabitatService {
 
 	private static void printRegionIntro(String region) {
 		switch (region) {
-			case "산":
+			case "mountain":
 				System.out.println("⛰️ 산에 들어섰습니다. 거대한 바위 몬스터가 출몰합니다!");
 				break;
-			case "바다":
+			case "sea":
 				System.out.println("🌊 바다에 도착했습니다. 깊은 곳에서 몬스터가 솟아오릅니다!");
 				break;
-			case "학교":
+			case "school":
 				System.out.println("🏫 학교 안으로 들어갑니다. 의외의 장소에서 몬스터가 나타납니다!");
 				break;
 			default:
