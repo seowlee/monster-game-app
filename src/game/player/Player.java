@@ -28,6 +28,8 @@ public class Player {
 			ph.recoveryHP(name);
 			return;
 		}
+
+		System.out.println("🎯 " + this.name + "이(가) 몬스터를 잡으려 합니다!");
 		am.attackMonster(monster);
 		this.consumeHP();
 	};
@@ -48,6 +50,8 @@ public class Player {
 		if (this.hp <= 0) {
 			System.out.println("❤️ 체력을 회복합니다! 이제 행동할 수 있습니다!");
 			this.hp = 100;
+		} else {
+			System.out.println("휴식 금지 다시 몬스터를 잡으러 가세요.");
 		}
 		System.out.println();
 	};
