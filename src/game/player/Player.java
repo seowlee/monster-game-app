@@ -40,6 +40,7 @@ public class Player {
 			ph.recoveryHP(name);
 			return;
 		}
+		System.out.println("💥 " + this.name + "이(가) 몬스터에게 공격을 시도합니다!");
 		this.consumeHP();
 		hm.printAttackReaction(monster.getAttackName());
 		monster.takeDamage();
