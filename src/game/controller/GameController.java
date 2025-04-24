@@ -14,7 +14,7 @@ public class GameController {
 	boolean isGameStarted = false;
 
 	public void run() {
-		this.printWelcomeMessage();
+		this.printWelcomeMessage(); // 사용자에게 인삿말, 도움말 출력
 
 		while (true) {
 			String inputString = scanner.nextLine().trim();
