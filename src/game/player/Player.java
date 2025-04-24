@@ -3,13 +3,18 @@ package game.player;
 import game.monster.Monster;
 
 public class Player {
-	private final String name = "모험자";
+	private String name;
 	private int hp = 100;
 
 	ViewMonsterDex vmd = new ViewMonsterDex();
 	AttackMonster am = new AttackMonster();
 	HitMonster hm = new HitMonster();
 	printHP ph = new printHP();
+
+    // 이름 입력하기
+    public void enterName(String name) {
+        this.name = name;
+    }
 
 	// 도감 목록 보기- 잡은 몬스터 목록, 잡아야할 몬스터 목록 모두 포함
 	// 아래 함수들에 대한 몬스터 상태에 대한 것은 몬스터 패키지에서 처리
@@ -53,7 +58,8 @@ public class Player {
 		ph.PrintHP(hp, conHP, name);
 	}
 
+    // 체력 방전 메시지
     private void recoveryHP() {
-        System.out.println("❤️ 플레이어가 지쳐 있어 체력을 회복해야 합니다!");
+        System.out.println("❤️ " + name + "님은 지쳐 있어 체력을 회복해야 합니다!");
     }
 }

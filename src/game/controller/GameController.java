@@ -59,7 +59,13 @@ public class GameController {
 		this.gameContext = new GameContext();
 		this.isGameStarted = true;
 		this.printStartGuide();
+        this.enterName();
 	}
+
+    private void enterName() {
+        String inputName = scanner.nextLine().trim();
+        gameContext.getPlayer().enterName(inputName);
+    }
 
 	private void printWelcomeMessage() {
 		System.out.println("--------------------------------");
@@ -73,6 +79,7 @@ public class GameController {
 		System.out.println("\n## 게임 시작!");
 		System.out.println("🔥 몬스터 초기화 완료 ("
 				+ gameContext.getMonsterManager().getAllMonsters().length + " 마리 등장)");
+        System.out.println("😁 당신의 이름은 무엇입니까?");
 
 	}
 
