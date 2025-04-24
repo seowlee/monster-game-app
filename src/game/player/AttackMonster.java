@@ -19,10 +19,10 @@ public class AttackMonster {
         if (hp <= 30) {
             captureMonster(monster);
         }
-        // 몬스터 체력이 70 이하면 50% 확률로 잡을 수 있음
-        else if (hp <= 70 && r.nextInt(2) == 0) {
+        // 몬스터 체력이 100 이하면 50% 확률로 잡을 수 있음
+        else if (hp <= 100 && r.nextInt(2) == 0) {
             captureMonster(monster);
-        } else if (hp > 70 && r.nextInt(4) == 0) {
+        } else if (hp > 100 && r.nextInt(4) == 0) {
             captureMonster(monster);
         } else {
             System.out.println(monster.getName() + "를 잡지 못했습니다.");
