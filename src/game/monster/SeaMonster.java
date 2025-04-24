@@ -6,7 +6,7 @@ public class SeaMonster extends Monster { // 자식클래스(몬스터의 종류
 		super(id, name, tier, maxEnergy);
 		this.habitat = "sea";
 		this.attackName = "물대포";
-		this.hpLoss = 15;
+		this.hpLoss = 40;
 	}
 
 	// TODO: takeDamage 메소드 오버라이드

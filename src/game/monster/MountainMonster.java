@@ -8,7 +8,7 @@ public class MountainMonster extends Monster { // 자식클래스(몬스터의 �
 		super(id, name, tier, maxEnergy);
 		this.habitat = "mountain";
 		this.attackName = "바위던지기";
-		this.hpLoss = 20;
+		this.hpLoss = 50;
 	}
 
 	@Override
