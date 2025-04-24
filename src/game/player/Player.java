@@ -9,7 +9,7 @@ public class Player {
 	ViewMonsterDex vmd = new ViewMonsterDex();
 	AttackMonster am = new AttackMonster();
 	HitMonster hm = new HitMonster();
-	printHP ph = new printHP();
+	PrintHP ph = new PrintHP();
 
     // 이름 입력하기
     public void enterName(String name) {
