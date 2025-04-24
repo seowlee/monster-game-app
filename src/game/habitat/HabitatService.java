@@ -22,7 +22,7 @@ public class HabitatService {
 
 		target.printMonster();
 
-		// TODO: player hp < 0 처리 그냥 넘기기
+		// 플레이어 체력이 0 이하인 것은 플레이어 함수에서 처리
 		switch (action) {
 			case "1":
 				gameContext.getPlayer().attackMonster(target);
@@ -39,13 +39,12 @@ public class HabitatService {
 				System.out.println("⚠️ 올바른 입력이 아닙니다.");
 		}
 		if (target.isCaptured()) {
-			System.out.println("🎉 몬스터를 잡았습니다! 지역 탐험을 종료합니다.");
+			System.out.println("🎉 몬스터 한 마리를 잡았습니다! 축하합니다!");
 		}
 	}
 
 	private static void exploreMountain(String region, GameContext gameContext) {
 		System.out.println("⛰️ 산에 들어섰습니다. 거대한 바위 몬스터가 출몰합니다!");
-
 		// MountainMonster monster = new MountainMonster(...);
 		// monster.describe();
 	}

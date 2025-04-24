@@ -9,10 +9,13 @@ public class HitMonster {
         switch (randNm) {
             case 0:
                 result = 50;
+                break;
             case 1:
                 result = 30;
+                break;
             case 2:
                 result = 20;
+                break;
             default:
                 result = 0;
         }

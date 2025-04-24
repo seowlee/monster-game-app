@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import game.context.GameContext;
 import game.habitat.HabitatService;
-import game.player.Player;
 import game.utils.Converter;
 
 // 전체 게임 관리 컨트롤러

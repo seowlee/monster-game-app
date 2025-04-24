@@ -24,7 +24,7 @@ public class Monster { // 부모 클래스(몬스터 공통 속성과 기능정�
 	}
 
 	public void printMonster() { // 몬스터 정보 출력
-		System.out.println("이름: " + this.name + "몬스터hp: " + this.hp + "몬스터 서식지: " + this.habitat);
+		System.out.println("이름: " + this.name + ", 몬스터 HP: " + this.hp + ", 몬스터 서식지: " + this.habitat);
 	}
 
 	public void takeDamage() { // 데미지 입은 양 출력

@@ -4,7 +4,7 @@ import game.monster.Monster;
 
 public class Player {
 	private final String name = "모험자";
-	private int hp;
+	private int hp = 100;
 
 	ViewMonsterDex vmd = new ViewMonsterDex();
 	AttackMonster am = new AttackMonster();
@@ -19,24 +19,31 @@ public class Player {
 
 	// 몬스터 잡기 - 잡혔는지 안잡혔는지 결과에 따라 처리하기
 	public void attackMonster(Monster monster) {
-		if (this.hp <= 0)
-			return;
+		if (this.hp <= 0) {
+            recoveryHP();
+            return;
+        }
 		am.attackMonster(monster);
 		consumeHP();
 	};
 
 	// 몬스터 공격하기 - 플레이어, 포켓몬 에너지 깎임
 	public void hitMonster(Monster monster) {
-		if (this.hp <= 0)
-			return;
+		if (this.hp <= 0) {
+            recoveryHP();
+            return;
+        }
 		consumeHP();
-		monster.setHp(monster.getHp() - hm.attack());
+		monster.setHp(Math.max(0, monster.getHp() - hm.attack()));
 	}
 
 	// 휴식 - 에너지 복구
 	public void rest() {
-		if (this.hp <= 0)
-			this.hp = 100;
+		if (this.hp <= 0) {
+            System.out.println("❤️ 체력을 회복합니다! 이제 행동할 수 있습니다!");
+            this.hp = 100;
+        }
+        System.out.println();
 	};
 
 	// 체력 감소 - 행동할 때 마다 플레이어 체력이 깍임(10 감소)
@@ -45,4 +52,8 @@ public class Player {
 		this.hp -= conHP;
 		ph.PrintHP(hp, conHP, name);
 	}
+
+    private void recoveryHP() {
+        System.out.println("❤️ 플레이어가 지쳐 있어 체력을 회복해야 합니다!");
+    }
 }
