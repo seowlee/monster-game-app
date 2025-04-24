@@ -1,6 +1,5 @@
 package game.monster;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class MonsterManager {
@@ -36,10 +35,13 @@ public class MonsterManager {
 	}
 
 	// 몬스터 목록 출력. 그 목록을 출력하는 메서드 - 함수에
-	public static void showMonstersByRegion(Monster[] allMonsters) {
-		for (int i = 0; i < allMonsters.length; i++) { // i 가 인덱스지
+	public void showMonstersByRegion(Monster[] allMonsters) {
+		System.out.println("\n📋 몬스터 목록:");
+		System.out.println("-----------------------------");
+		for (int i = 0; i < allMonsters.length; i++) {
 			allMonsters[i].printMonster();
 		}
+		System.out.println("-----------------------------");
 	}
 
 	// public static

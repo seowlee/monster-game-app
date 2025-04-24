@@ -3,19 +3,19 @@ package game.monster;
 public class SchoolMonster extends Monster {
 
 	public SchoolMonster(int id, String name, int tier, int maxEnergy) { // 자식클래스(몬스터의 종류별 특징 구현) - 3학교몬스터
-		super(id, name, tier);
+		super(id, name, tier, maxEnergy);
 		this.habitat = "school";
 		this.attackName = "지식의 파도";
-		this.attackDamage = 50;
+		this.hpLoss = 50;
 	}
 
 	// TODO: takeDamage 메소드 오버라이드
 	@Override
 	public void takeDamage() {
 		// super.reduceHp(damage)
-		reduceHp(this.attackDamage);
+		reduceHp(this.hpLoss);
 
-		System.out.println("📚 " + getName() + "이(가) " + attackName + "에 맞아 " + attackDamage + " 데미지를 입었습니다!");
+		System.out.println("📚 " + getName() + "이(가) " + attackName + "에 맞아 " + hpLoss + " 데미지를 입었습니다!");
 		System.out.println("🧠 남은 체력: " + getHp());
 
 	}
