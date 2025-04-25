@@ -1,9 +1,10 @@
 package game.controller;
 
-import java.util.Scanner;
+import java.util.*;
 
 import game.context.GameContext;
 import game.habitat.HabitatService;
+import game.monster.Monster;
 import game.utils.Converter;
 
 // 전체 게임 관리 컨트롤러
@@ -44,15 +45,17 @@ public class GameController {
 				} else {
 					System.out.println("🧭 선택된 장소: " + region);
 					HabitatService.exploreRegion(scanner, region, this.gameContext);
+                    if (Arrays.stream(gameContext.getMonsterManager().getAllMonsters()).allMatch(Monster::isCaptured)) {
+                        playerWinMessage();
+                        break;
+                    }
 					this.printInGameHelp();
 				}
-
 			} else {
 				System.out.println("⚠️ 존재하지 않는 명령어입니다. 사용 가능한 명령어:");
 				this.printInGameHelp();
 			}
 		}
-
 	}
 
 	private void startGame() {
@@ -99,4 +102,12 @@ public class GameController {
 		System.out.println("🌟==============================🌟\n");
 	}
 
+    private void playerWinMessage() {
+        System.out.println();
+        System.out.println("🌟==============================🌟");
+        System.out.println("    모든 몬스터를 잡았습니다! 😁");
+        System.out.println("    당신은 진정한 트레이너입니다! 😁");
+        System.out.println("    승리하였습니다! 🎊");
+        System.out.println("🌟==============================🌟\n");
+    }
 }
