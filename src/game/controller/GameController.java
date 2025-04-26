@@ -6,7 +6,7 @@ import game.context.GameContext;
 import game.habitat.HabitatService;
 import game.monster.Monster;
 import game.utils.Converter;
-
+ 
 // 전체 게임 관리 컨트롤러
 public class GameController {
     Scanner scanner = new Scanner(System.in);
