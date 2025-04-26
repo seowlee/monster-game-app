@@ -47,6 +47,7 @@ public class GameController {
                     System.out.println("🧭 선택된 장소: " + region);
                     HabitatService.exploreRegion(scanner, region, this.gameContext);
                     turnCount++; // 
+                    System.out.println( turnCount + "번째 턴 종료!");
 
                     if (turnCount > 80) {
                         System.out.println("🔥 80턴을 초과했습니다. 몬스터들이 모두 도망갔습니다!");
