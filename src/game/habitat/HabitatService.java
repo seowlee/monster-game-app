@@ -14,12 +14,21 @@ public class HabitatService {
 			System.out.println("⚠️ 이 지역에서 더 이상 잡을 수 있는 몬스터가 없습니다.");
 			return;
 		}
-		MonsterManager.showMonstersByRegion(uncapturedMonstersByRegion);
-
-		System.out.println("💡 행동을 선택하세요: 1.잡기  2.공격하기  3.휴식 0.지역 선택으로 돌아가기");
-		String action = scanner.nextLine().trim();
+		// 랜덤 몬스터 먼저 뽑고 
 		Monster target = gameContext.getMonsterManager().getRandomMonster(uncapturedMonstersByRegion);
 
+        System.out.println("----------------------------------------------------------------------------------------");
+		System.out.println("[" + region + "에서 잡을 수 있는 몬스터 목록]");
+		MonsterManager.showMonstersByRegion(uncapturedMonstersByRegion);
+
+		// 몬스터 출현 메시지 출력
+		System.out.println("\"" + target.getName() + "\" 몬스터가 출현했다!");
+		System.out.println();
+		System.out.println("행동을 선택하세요: 1.잡기  2.공격하기  3.휴식 0.지역 선택으로 돌아가기");
+		
+		String action = scanner.nextLine().trim();
+		System.out.println();
+		System.out.println("[몬스터 상태]");
 		target.printMonster();
 
 		// TODO: player hp < 0 처리 그냥 넘기기
@@ -61,4 +70,25 @@ public class HabitatService {
 		// SchoolMonster monster = new SchoolMonster(...);
 		// monster.describe();
 	}
+
+
+
+	// 영어 지역명 -> 한글로 변환 메소드
+// 	private static String convertRegionToKorean(String region) {
+//     switch (region) {
+//         case "mountain":
+//             return "산";
+//         case "sea":
+//             return "바다";
+//         case "school":
+//             return "학교";
+//         default:
+//             return region; // 예외 처리: 그냥 원본 리턴
+//     }
+// }
+
+
+
+
+
 }

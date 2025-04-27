@@ -1,5 +1,5 @@
 package game.monster;
-
+// 바다 몬스터 - 클래스 상속 구현 
 public class SeaMonster extends Monster { // 자식클래스(몬스터의 종류별 특징 구현) - 2바다 몬스터
 
 	public SeaMonster(int id, String name, int tier, int maxEnergy) {

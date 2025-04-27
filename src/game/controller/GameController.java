@@ -43,7 +43,7 @@ public class GameController {
 				if (region == null) {
 					System.out.println("⚠️ 잘못된 탐험지 입니다. (go 1 / go 2 / go 3)");
 				} else {
-					System.out.println("🧭 선택된 장소: " + region);
+					System.out.println("선택된 장소: " + region);
 					HabitatService.exploreRegion(scanner, region, this.gameContext);
 					this.printInGameHelp();
 				}
@@ -63,11 +63,12 @@ public class GameController {
 	}
 
 	private void printWelcomeMessage() {
-		System.out.println("--------------------------------");
+		System.out.println("----------------------------------------------------------------------------------------");		
 		System.out.println("📝 명령어 예시:");
 		System.out.println("  start         → 게임 시작");
 		System.out.println("  exit          → 프로그램 종료");
-		System.out.println("--------------------------------");
+		System.out.println("----------------------------------------------------------------------------------------");
+
 	}
 
 	private void printStartGuide() {
@@ -78,12 +79,14 @@ public class GameController {
 	}
 
 	private void printInGameHelp() {
+		System.out.println("----------------------------------------------------------------------------------------");		
 		System.out.println("📌 명령어 예시:");
 		System.out.println("  dex        → 몬스터 도감 보기");
 		System.out.println("  go 1       → 산으로 탐험 가기");
 		System.out.println("  go 2       → 바다로 탐험 가기");
 		System.out.println("  go 3       → 학교로 탐험 가기");
-		System.out.println("  exit       → 게임 종료\n");
+		System.out.print("  exit       → 게임 종료\n");
+		System.out.println("----------------------------------------------------------------------------------------");		
 	}
 
 	private void printExitMessage() {

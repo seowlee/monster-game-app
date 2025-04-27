@@ -1,5 +1,5 @@
 package game.monster;
-
+// 학교 몬스터 - 클래스 상속 구현 
 public class SchoolMonster extends Monster {
 
 	public SchoolMonster(int id, String name, int tier, int maxEnergy) { // 자식클래스(몬스터의 종류별 특징 구현) - 3학교몬스터

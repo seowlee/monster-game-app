@@ -1,6 +1,5 @@
 package game.monster;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class MonsterManager {
@@ -40,6 +39,7 @@ public class MonsterManager {
 		for (int i = 0; i < allMonsters.length; i++) { // i 가 인덱스지
 			allMonsters[i].printMonster();
 		}
+		System.out.println("----------------------------------------------------------------------------------------");
 	}
 
 	// public static
