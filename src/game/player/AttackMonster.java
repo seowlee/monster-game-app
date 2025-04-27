@@ -4,6 +4,10 @@ import game.monster.Monster;
 
 import java.util.Random;
 
+/**
+ * ✅ 플레이어가 몬스터를 "잡기" 시도할 때 사용하는 로직을 담당
+ * - 몬스터 체력에 따라 포획 확률 다르게 적용
+ */
 public class AttackMonster {
     Random r = new Random();
 
@@ -13,6 +17,7 @@ public class AttackMonster {
         System.out.println(monster.getName() + "를 성공적으로 잡았습니다.");
     }
 
+    // 몬스터를 잡을 확률을 계산하고 잡기 시도
     public void attackMonster(Monster monster) {
         int hp = monster.getHp();
         // 몬스터 체력이 30 이하 이면 무조건 잡을 수 있음

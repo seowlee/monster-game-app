@@ -5,6 +5,9 @@ import java.util.Scanner;
 import game.context.GameContext;
 import game.monster.Monster;
 
+// ✅ 지역 탐험을 담당하는 서비스 클래스
+// 입력받은 지역에 따라 몬스터 탐험을 실행하고, 플레이어 행동(잡기/공격)을 지역별로 처리
+// 지역에 입장할 때 안내 메시지(printRegionIntro) 출력
 public class HabitatService {
 
 	public static void exploreRegion(Scanner scanner, String region, GameContext gameContext) {

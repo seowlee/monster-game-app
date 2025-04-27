@@ -2,6 +2,9 @@ package game.monster;
 
 import java.util.Random;
 
+// ✅ 몬스터 리스트를 관리하는 매니저
+// 전체 몬스터 목록을 저장하고, 지역별 미포획 몬스터 필터링, 랜덤 몬스터 선택 기능 제공
+//(showMonstersByRegion)하는 기능도 포함
 public class MonsterManager {
 	private Monster[] allMonsters;
 
@@ -34,7 +37,7 @@ public class MonsterManager {
 		return resultList;
 	}
 
-	// 몬스터 목록 출력. 그 목록을 출력하는 메서드 - 함수에
+	// 몬스터 목록을 출력
 	public void showMonstersByRegion(Monster[] allMonsters) {
 		System.out.println("\n📋 몬스터 목록:");
 		System.out.println("-----------------------------");
@@ -44,8 +47,7 @@ public class MonsterManager {
 		System.out.println("-----------------------------");
 	}
 
-	// public static
-
+	// 랜덤으로 몬스터를 선택(잡기/공격하기 선택 시)
 	public Monster getRandomMonster(Monster[] monsters) {
 		if (monsters == null || monsters.length == 0) {
 			throw new IllegalArgumentException("선택 가능한 몬스터가 없습니다.");

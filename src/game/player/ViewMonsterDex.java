@@ -2,6 +2,10 @@ package game.player;
 
 import game.monster.Monster;
 
+/**
+ * ✅ 플레이어가 보는 몬스터 도감 출력 기능
+ * - 전체 몬스터 리스트를 표 형식으로 정렬 출력
+ */
 public class ViewMonsterDex {
     public String viewMonsterDex(Monster[] monsterList, String name) {
         StringBuilder sb = new StringBuilder();

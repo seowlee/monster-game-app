@@ -1,5 +1,8 @@
 package game.player;
 
+/**
+ * ✅ 플레이어 체력 감소/회복 관련 메시지를 출력하는 클래스
+ */
 public class PrintHP {
     public void printHP(int hp, int conHp, String name) {
         System.out.println("플레이어 체력이 " + conHp + " 감소하였습니다.");

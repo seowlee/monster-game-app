@@ -1,6 +1,10 @@
 package game.monster;
 
-public class Monster { // 부모 클래스(몬스터 공통 속성과 기능정의)
+/**
+ * ✅ 모든 몬스터가 공통으로 가지는 기본 속성과 기능 정의 (부모 클래스)
+ * 몬스터가 데미지를 받거나, 포획되거나, 정보를 출력하는 기능 제공
+ */
+public class Monster {
 	private int id;
 	private String name;
 	private int hp; // 에너지. 체력
@@ -21,15 +25,20 @@ public class Monster { // 부모 클래스(몬스터 공통 속성과 기능정�
 		this.hpLoss = 10;
 	}
 
-	public void printMonster() { // 몬스터 정보 출력
+	// 몬스터 정보 출력
+	public void printMonster() {
 		System.out.println("이름: " + this.name + ", 몬스터 HP: " + this.hp + ", 몬스터 서식지: " + this.habitat);
 	}
 
-	public void takeDamage() { // 데미지 입은 양 출력
+	/**
+	 * - 몬스터가 맞을 때 출력되는 멘트를 지역/속성별로 다르게 처리 -> 자식 클래스에서 오버라이드하여 사용
+	 */
+	public void takeDamage() {
 		System.out.println("😵 몬스터 " + this.name + "이(가) " + this.hpLoss + " 만큼의 데미지를 입었습니다.");
 	}
 
-	public void reduceHp(int hpLoss) { // reduceHp
+	// 몬스터가 공격을 받았을 때 체력을 감소시키는 메서드
+	public void reduceHp(int hpLoss) {
 		this.hp = Math.max(0, this.hp - hpLoss);
 	}
 
@@ -52,10 +61,6 @@ public class Monster { // 부모 클래스(몬스터 공통 속성과 기능정�
 
 	public int getTier() {
 		return tier;
-	}
-
-	public int getMaxEnergy() {
-		return maxEnergy;
 	}
 
 	public boolean isCaptured() {

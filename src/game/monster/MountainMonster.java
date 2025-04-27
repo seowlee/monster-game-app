@@ -1,5 +1,6 @@
 package game.monster;
 
+// ✅ 산(Mountain) 지역 몬스터 클래스 (Monster 상속)
 public class MountainMonster extends Monster { // 자식클래스(몬스터의 종류별 특징 구현) - 1산몬스터
 
 	public MountainMonster(int id, String name, int tier, int maxEnergy) {
@@ -9,6 +10,10 @@ public class MountainMonster extends Monster { // 자식클래스(몬스터의 �
 		this.hpLoss = 50;
 	}
 
+	/**
+	 * ✅ [method override] 몬스터가 플레이어 공격에 반응하는 메서드
+	 * - 산 몬스터 전용 데미지 연출과 체력 감소 로직
+	 */
 	@Override
 	public void takeDamage() {
 		// super.reduceHp(damage); 와 같음. 자식에서 오버라이드 하지 않음

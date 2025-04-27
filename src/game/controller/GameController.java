@@ -7,7 +7,9 @@ import game.habitat.HabitatService;
 import game.monster.Monster;
 import game.utils.Converter;
 
-// 전체 게임 관리 컨트롤러
+// ✅ 전체 게임 흐름을 제어하는 컨트롤러
+// 사용자 입력에 따라 게임 시작(start), 도감(dex), 지역 탐험(go), 휴식(zz), 종료(exit) 명령을 처리
+// 턴 수 관리(turnCount), 승리/패배 조건 검사(playerWinMessage, playerLoseMessage) 담당
 public class GameController {
     Scanner scanner = new Scanner(System.in);
     GameContext gameContext;

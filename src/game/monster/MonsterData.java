@@ -1,5 +1,7 @@
 package game.monster;
 
+// ✅ 초기 몬스터 데이터 생성용 클래스
+// Mountain, Sea, School 지역별 몬스터 18마리를 초기화하여 Monster 배열로 반환
 public class MonsterData {
 
 	public static Monster[] getInitialMonsters() {

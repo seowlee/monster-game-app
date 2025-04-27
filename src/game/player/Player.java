@@ -2,6 +2,11 @@ package game.player;
 
 import game.monster.Monster;
 
+/**
+ * ✅ 플레이어 클래스
+ * - 이름, 체력 관리
+ * - 몬스터 공격/포획/휴식 등 플레이어 행동 정의
+ */
 public class Player {
 	private String name;
 	private int hp = 100;

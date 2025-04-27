@@ -2,25 +2,10 @@ package game.player;
 
 import java.util.*;
 
+/**
+ * ✅ 플레이어가 몬스터를 "공격"할 때 반응 출력
+ */
 public class HitMonster {
-    public int attack() {
-        int randNm = new Random().nextInt(4);
-        int result;
-        switch (randNm) {
-            case 0:
-                result = 50;
-                break;
-            case 1:
-                result = 30;
-                break;
-            case 2:
-                result = 20;
-                break;
-            default:
-                result = 0;
-        }
-        return result;
-    }
 
     public void printAttackReaction(String attackName) {
         switch (attackName) {
