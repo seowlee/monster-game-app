@@ -15,7 +15,7 @@ public class MonsterData {
 		monsters[index++] = new MountainMonster(5, "화산머리", 2, 100); // 용암형 바위
 		monsters[index++] = new MountainMonster(6, "지진포효", 3, 100); // 지축을 울리는 돌
 
-		// 🌊 Sea Monsters (maxEnergy: 200)
+		// 🌊 Sea Monsters (maxEnergy: 120)
 		monsters[index++] = new SeaMonster(7, "물총알", 1, 120); // 귀여운 물탄환
 		monsters[index++] = new SeaMonster(8, "조개찍찍", 2, 120); // 귀여운 조개포
 		monsters[index++] = new SeaMonster(9, "해일턱괴", 3, 120); // 바다의 입
@@ -23,7 +23,7 @@ public class MonsterData {
 		monsters[index++] = new SeaMonster(11, "파도질주", 2, 120); // 고속돌진
 		monsters[index++] = new SeaMonster(12, "심연상어", 3, 120); // 최강의 포식자
 
-		// 🏫 School Monsters (maxEnergy: 300)
+		// 🏫 School Monsters (maxEnergy: 150)
 		monsters[index++] = new SchoolMonster(13, "지우개몬", 1, 150); // 덜덜 떨리는 수업시간 몬스터
 		monsters[index++] = new SchoolMonster(14, "숙제괴물", 2, 150); // 숙제 공포
 		monsters[index++] = new SchoolMonster(15, "시험킹", 1, 150); // 평범한 시험 지배자
