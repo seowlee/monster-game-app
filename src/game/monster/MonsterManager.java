@@ -41,11 +41,10 @@ public class MonsterManager {
 		for (int i = 0; i < allMonsters.length; i++) {
 			allMonsters[i].printMonster();
 		}
-		System.out.println("-----------------------------");
+		System.out.println("----------------------------------------------------------------------------------------");
 	}
 
 	// public static
-
 	public Monster getRandomMonster(Monster[] monsters) {
 		if (monsters == null || monsters.length == 0) {
 			throw new IllegalArgumentException("선택 가능한 몬스터가 없습니다.");
